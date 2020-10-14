@@ -37,7 +37,7 @@ class SampleController extends Controller
 
     public function select()
     {
-        $pochi = Pet::find(1);
+        $pochi = Pet::find(2);
 
         return view('select', [
             "pochi" => $pochi
@@ -68,7 +68,7 @@ class SampleController extends Controller
 
     public function delete()
     {
-        Pet::orderBy('id', 'asc')->first()->delete();
+        Pet::orderBy('id', 'desc')->first()->delete();
 
         return "データを削除しました";
     }
